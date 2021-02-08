@@ -5,6 +5,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TaskOnDocuments extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {value: ""};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeText = this.handleChangeText.bind(this);
+    }
+
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+    }
+
+    handleChangeText(event){
+
+    }
+
     render() {
         return <div className="App">
             <div className="container form-container">
@@ -27,18 +49,18 @@ class TaskOnDocuments extends Component {
                     <div className="col-6">
                         <div className="checkbox-container">
                             <label>
-                                <input className="checkbox" type="checkbox" value="Заключить NDA"
+                                <input className="checkbox" type="checkbox" value="Заключить NDA" onChange={this.handleChangeText}
                                 /> Заключить NDA
                             </label>
 
                             <label>
-                                <input className="checkbox" type="checkbox" value="Заключить рамочный договор"
+                                <input className="checkbox" type="checkbox" value="Заключить рамочный договор" onChange={this.handleChangeText}
                                 /> Заключить Рамочный договор
                             </label>
 
                             <label>
                                 <input className="checkbox" type="checkbox"
-                                       value="Заключить договор на конкретный проект"
+                                       value="Заключить договор на конкретный проект" onChange={this.handleChangeText}
                                 /> Заключить договор на конкретный проект
                             </label>
 
@@ -49,15 +71,15 @@ class TaskOnDocuments extends Component {
                         </div>
                         <div className="checkbox-container">
                             <label>
-                                <input className="radio" type="radio" name="optradio" value="C НДС"
+                                <input className="radio" type="radio" name="optradio" value="C НДС" onChange={this.handleChangeText}
                                 /> C НДС
                             </label>
                             <label>
-                                <input className="radio" type="radio" name="optradio" value="Без НДС"
+                                <input className="radio" type="radio" name="optradio" value="Без НДС" onChange={this.handleChangeText}
                                 /> Без НДС
                             </label>
                             <label>
-                                <input className="radio" type="radio" name="optradio" value="Неизвестно"
+                                <input className="radio" type="radio" name="optradio" value="Неизвестно" onChange={this.handleChangeText}
                                 /> Неизвестно
                             </label>
                         </div>
